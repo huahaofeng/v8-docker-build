@@ -6,4 +6,4 @@ docker run -it --rm \
         --net=host \
         -e http_proxy=http://127.0.0.1:7890 \
         -e https_proxy=http://127.0.0.1:7890 \
-        nikola1234/v8:build d8
+        nikola1234/v8:build build d8
