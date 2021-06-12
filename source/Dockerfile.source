@@ -1,0 +1,16 @@
+FROM ubuntu:18.04
+
+COPY ./sources.list /etc/apt
+RUN apt-get update
+RUN apt-get install -y \ 
+			git \
+			python \
+			python3 \
+			pkg-config \
+			vim
+
+COPY ./depot_tools /home/depot_tools
+ENV PATH="${PATH}:/home/depot_tools"
+
+COPY ./repo /home/repo
+WORKDIR /home/repo/v8

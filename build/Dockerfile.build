@@ -1,0 +1,10 @@
+FROM nikola1234/v8:source
+
+ENV SOURCE_TAG="9.0.257.29"
+ENV SYNC="false"
+ENV GN_ARGS='v8_monolithic=true v8_use_external_startup_data=false is_component_build=false is_debug=false target_cpu="x64" use_goma=false goma_dir="None" v8_enable_backtrace=true v8_enable_disassembler=true v8_enable_object_print=true v8_enable_verify_heap=true'
+
+COPY entrypoint.sh /home
+RUN chmod +x /home/entrypoint.sh
+
+ENTRYPOINT ["/home/entrypoint.sh"]
